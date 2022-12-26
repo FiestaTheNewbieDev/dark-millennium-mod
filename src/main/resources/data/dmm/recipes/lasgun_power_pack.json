@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 300,
+  "ingredient": {
+    "item": "dmm:lasgun_power_pack"
+  },
+  "result": "dmm:lasgun_power_pack"
+}

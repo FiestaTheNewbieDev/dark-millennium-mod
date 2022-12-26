@@ -1,0 +1,43 @@
+{
+  "itemGroup.dmm_items": "§6Dark Millennium Mod Items§r",
+  "itemGroup.dmm_blocks": "§6Dark Millennium Mod Blocks§r",
+
+  "advancements.dmm.root.title": "Dark Millennium Mod",
+  "advancements.dmm.root.desc": "Bienvenue au 41ème Millénaire",
+  "advancements.dmm.obtain_lasgun.title": "Votre vie a moins de valeur",
+  "advancements.dmm.obtain_lasgun.desc": "Prenez un fusil laser et servez-vous-en pour servir l'Empereur",
+  "advancements.dmm.use_auspex.title": "Forme de vie détectée",
+  "advancements.dmm.use_auspex.desc": "Utilisez un auspex",
+
+  "key.category.dmm.dmm": "Dark Millennium Mod",
+  "key.dmm.reload": "Recharger",
+
+  "tooltip.dmm.auspex.no_detection": "§2+++ Aucune information obtenue +++§r",
+  "tooltip.dmm.auspex.detection": "§2+++ Énergie détectée à %1$s §2mètres +++§r",
+  "tooltip.dmm.auspex.reach": "Portée : %1$s mètres",
+  "tooltip.dmm.power_sword.energy": "Énergie : %1$s/%2$s",
+  "tooltip.dmm.weapons.no_ammo": "Vous n'avez plus de munitions !",
+  "tooltip.dmm.weapons.ammo": "Munitions : %1$s/%2$s",
+  "tooltip.dmm.weapons.damage": "Dégâts : %1$s",
+  "tooltip.dmm.weapons.fire_rate": "Cadence de tir : %1$s coups par minute",
+  "tooltip.dmm.press_shift": "Appuyez sur §4SHIFT§r pour plus d'informations",
+
+  "block.dmm.emperor_idol": "Idole de l'Empereur",
+
+  "item.dmm.laspistol_power_pack": "Cellule énergétique de pistolet laser",
+  "item.dmm.laspistol": "Pistolet laser",
+  "item.dmm.lasgun_power_pack": "Cellule énergétique de fusil laser",
+  "item.dmm.lasgun": "Fusil laser",
+  "item.dmm.bolt_pistol_magazine": "Chargeur de pistolet bolter",
+  "item.dmm.bolt_pistol": "Pistolet bolter",
+  "item.dmm.chainsword": "Épée Tronçonneuse",
+  "item.dmm.power_sword": "Épée énergétique",
+  "item.dmm.auspex": "Auspex",
+
+  "entity.dmm.cultist": "Cultiste",
+  "entity.dmm.imperial_guard": "Garde impérial",
+
+  "tooltip.dmm:auspex.desc": "§4Capteur à courte portée utilisé pour analyser les émissions d'énergie ambiente via une large bande du spectre électromagnétique.§r",
+  "tooltip.dmm:laspistol.desc": "§4Variante standard du pistolet laser utilisée par les troupes cadiennes.§r",
+  "tooltip.dmm:lasgun.desc": "§4Variante standard du fusil laser utilisée par les troupes cadiennes.§r",,
+}

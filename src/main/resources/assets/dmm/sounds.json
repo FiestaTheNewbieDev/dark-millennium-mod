@@ -1,0 +1,116 @@
+{
+  "laser_beam_impact": {
+    "subtitle": "sounds.dmm.laser_beam_impact",
+    "sounds": [
+      "dmm:laser_beam/laser_beam_impact_01",
+      "dmm:laser_beam/laser_beam_impact_02",
+      "dmm:laser_beam/laser_beam_impact_03",
+      "dmm:laser_beam/laser_beam_impact_04",
+      "dmm:laser_beam/laser_beam_impact_05",
+      "dmm:laser_beam/laser_beam_impact_06",
+      "dmm:laser_beam/laser_beam_impact_07"
+    ]
+  },
+  "bolt_impact": {
+    "subtitle": "sounds.dmm.bolt_impact",
+    "sounds": [
+      "dmm:bolt/bolt_impact_01",
+      "dmm:bolt/bolt_impact_02",
+      "dmm:bolt/bolt_impact_03",
+      "dmm:bolt/bolt_impact_04"
+    ]
+  },
+  "lasgun_fire": {
+    "subtitle": "sounds.dmm.lasgun_fire",
+    "sounds": [
+      "dmm:lasgun/lasgun_fire_01",
+      "dmm:lasgun/lasgun_fire_02",
+      "dmm:lasgun/lasgun_fire_03",
+      "dmm:lasgun/lasgun_fire_04",
+      "dmm:lasgun/lasgun_fire_05",
+      "dmm:lasgun/lasgun_fire_06",
+      "dmm:lasgun/lasgun_fire_07",
+      "dmm:lasgun/lasgun_fire_08"
+    ]
+  },
+  "laspistol_fire": {
+    "subtitle": "sounds.dmm.laspistol_fire",
+    "sounds": [
+      "dmm:laspistol/laspistol_fire_01",
+      "dmm:laspistol/laspistol_fire_02",
+      "dmm:laspistol/laspistol_fire_03",
+      "dmm:laspistol/laspistol_fire_04",
+      "dmm:laspistol/laspistol_fire_05",
+      "dmm:laspistol/laspistol_fire_06",
+      "dmm:laspistol/laspistol_fire_07",
+      "dmm:laspistol/laspistol_fire_08"
+    ]
+  },
+  "bolt_pistol_fire": {
+    "subtitle": "sounds.dmm.bolt_pistol_fire",
+    "sounds": [
+      "dmm:bolt_pistol/bolt_pistol_fire_01",
+      "dmm:bolt_pistol/bolt_pistol_fire_02",
+      "dmm:bolt_pistol/bolt_pistol_fire_03",
+      "dmm:bolt_pistol/bolt_pistol_fire_04",
+      "dmm:bolt_pistol/bolt_pistol_fire_05",
+      "dmm:bolt_pistol/bolt_pistol_fire_06",
+      "dmm:bolt_pistol/bolt_pistol_fire_07",
+      "dmm:bolt_pistol/bolt_pistol_fire_08"
+    ]
+  },
+  "reload": {
+    "subtitle": "sounds.dmm.reload",
+    "sounds": [
+      "dmm:reload/reload_01",
+      "dmm:reload/reload_02",
+      "dmm:reload/reload_03"
+    ]
+  },
+  "lock": {
+    "subtitle": "sounds.dmm.lock",
+    "sounds": [
+      "dmm:lock/lock_01",
+      "dmm:lock/lock_02",
+      "dmm:lock/lock_03",
+      "dmm:lock/lock_04",
+      "dmm:lock/lock_05"
+    ]
+  },
+  "swing": {
+    "subtitle": "sounds.dmm.swing",
+    "sounds": [
+      "dmm:swing/swing_01",
+      "dmm:swing/swing_02",
+      "dmm:swing/swing_03",
+      "dmm:swing/swing_04",
+      "dmm:swing/swing_05",
+      "dmm:swing/swing_06",
+      "dmm:swing/swing_07"
+    ]
+  },
+  "chainsword_swing": {
+    "subtitle": "sounds.dmm.chainsword_swing",
+    "sounds": [
+      "dmm:chainsword/chainsword_swing_01",
+      "dmm:chainsword/chainsword_swing_02",
+      "dmm:chainsword/chainsword_swing_03",
+      "dmm:chainsword/chainsword_swing_04",
+      "dmm:chainsword/chainsword_swing_05",
+      "dmm:chainsword/chainsword_swing_06",
+      "dmm:chainsword/chainsword_swing_07",
+      "dmm:chainsword/chainsword_swing_08",
+      "dmm:chainsword/chainsword_swing_09",
+      "dmm:chainsword/chainsword_swing_10"
+    ]
+  },
+  "power_sword_impact": {
+    "subtitle": "sounds.dmm.power_sword_impact",
+    "sounds": [
+      "dmm:power_sword/power_sword_impact_01",
+      "dmm:power_sword/power_sword_impact_02",
+      "dmm:power_sword/power_sword_impact_03",
+      "dmm:power_sword/power_sword_impact_04"
+    ]
+  }
+}

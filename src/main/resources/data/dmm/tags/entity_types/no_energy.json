@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:armor_stand",
+    "minecraft:arrow",
+    "minecraft:boat",
+    "minecraft:chest_minecart",
+    "minecraft:command_block_minecart",
+    "minecraft:egg",
+    "minecraft:falling_block",
+    "minecraft:furnace_minecart",
+    "minecraft:glow_item_frame",
+    "minecraft:hopper_minecart",
+    "minecraft:item",
+    "minecraft:item_frame",
+    "minecraft:leash_knot",
+    "minecraft:llama_spit",
+    "minecraft:marker",
+    "minecraft:minecart",
+    "minecraft:painting",
+    "minecraft:snowball",
+    "minecraft:spawner_minecart",
+    "minecraft:tnt_minecart",
+    "minecraft:trident"
+  ]
+}

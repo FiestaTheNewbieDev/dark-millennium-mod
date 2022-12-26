@@ -1,0 +1,43 @@
+{
+  "itemGroup.dmm_items": "§6Dark Millennium Mod Items§r",
+  "itemGroup.dmm_blocks": "§6Dark Millennium Mod Blocks§r",
+
+  "advancements.dmm.root.title": "Dark Millennium Mod",
+  "advancements.dmm.root.desc": "Welcome to 41st Millennium",
+  "advancements.dmm.obtain_lasgun.title": "Your life is worth less",
+  "advancements.dmm.obtain_lasgun.desc": "Grab a lasgun and use it to serve the emperor",
+  "advancements.dmm.use_auspex.title": "Life form detected !",
+  "advancements.dmm.use_auspex.desc": "Use auspex",
+
+  "key.category.dmm.dmm": "Dark Millennium Mod",
+  "key.dmm.reload": "Reload",
+
+  "tooltip.dmm.auspex.no_detection": "§2+++ No information obtained +++§r",
+  "tooltip.dmm.auspex.detection": "§2+++ Energy detected at %1$s §2meters +++§r",
+  "tooltip.dmm.auspex.reach": "Reach : %1$s meters",
+  "tooltip.dmm.power_sword.energy": "Energy : %1$s/%2$s",
+  "tooltip.dmm.weapons.no_ammo": "You are out of ammunition !",
+  "tooltip.dmm.weapons.ammo": "Ammo : %1$s/%2$s",
+  "tooltip.dmm.weapons.damage": "Damage : %1$s",
+  "tooltip.dmm.weapons.fire_rate": "Fire rate : %1$s rounds per minute",
+  "tooltip.dmm.press_shift": "Press §4SHIFT§r for more Information",
+
+  "block.dmm.emperor_idol": "Emperor Idol",
+
+  "item.dmm.laspistol_power_pack": "Laspistol Power Pack",
+  "item.dmm.laspistol": "Laspistol",
+  "item.dmm.lasgun_power_pack": "Lasgun Power Pack",
+  "item.dmm.lasgun": "Lasgun",
+  "item.dmm.bolt_pistol_magazine": "Bolt Pistol Magazine",
+  "item.dmm.bolt_pistol": "Bolt Pistol",
+  "item.dmm.chainsword": "Chainsword",
+  "item.dmm.power_sword": "Power Sword",
+  "item.dmm.auspex": "Auspex",
+
+  "entity.dmm.cultist": "Cultist",
+  "entity.dmm.imperial_guard": "Imperial Guard",
+
+  "tooltip.dmm:auspex.desc": "§4Also called Surveyor, Multi-scanner or Scanner, an Auspex is a short-ranged sensor used to analyse ambient energy emmissions accross a wide band of electromagnetic spectrum.§r",
+  "tooltip.dmm:laspistol.desc": "§4Standard variant of the laspistol used by Cadian troops.§r",
+  "tooltip.dmm:lasgun.desc": "§4Standard variant of the lasgun used by Cadian troops.§r"
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "dmm:block/emperor_idol",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "dmm:block/emperor_idol"
+    },
+    "facing=south": {
+      "model": "dmm:block/emperor_idol",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "dmm:block/emperor_idol",
+      "y": 270
+    }
+  }
+}

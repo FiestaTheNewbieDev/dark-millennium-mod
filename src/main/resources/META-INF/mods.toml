@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+license="All rights reserved"
+
+[[mods]]
+modId="dmm"
+version="${file.jarVersion}"
+displayName="Dark Millennium Mod"
+#displayURL="https://github.com/FiestaTheNewbieDev/dark-millennium-mod"
+logoFile="dmm_logo.png" #optional
+#credits="Thanks for this example mod goes to Java"
+authors="FiestaTheNewbieDev"
+description="!!! Unoficial Warhammer 40,000 Content !!!"
+
+[[dependencies.dmm]] #optional
+    # the modid of the dependency
+    modId="forge" #mandatory
+    # Does this dependency have to exist - if not, ordering below must be specified
+    mandatory=true #mandatory
+    # The version range of the dependency
+    versionRange="[40,)" #mandatory
+    # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
+    ordering="NONE"
+    # Side this dependency is applied on - BOTH, CLIENT or SERVER
+    side="BOTH"
+[[dependencies.dmm]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2,)"
+    ordering="NONE"
+    side="BOTH"
