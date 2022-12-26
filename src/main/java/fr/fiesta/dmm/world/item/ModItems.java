@@ -1,6 +1,7 @@
 package fr.fiesta.dmm.world.item;
 
 import fr.fiesta.dmm.DMM;
+import fr.fiesta.dmm.utils.ModCreativeModeTabs;
 import fr.fiesta.dmm.world.item.gun.BoltPistol;
 import fr.fiesta.dmm.world.item.gun.Lasgun;
 import fr.fiesta.dmm.world.item.gun.Laspistol;

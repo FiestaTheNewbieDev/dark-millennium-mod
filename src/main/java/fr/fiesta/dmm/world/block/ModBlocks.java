@@ -1,7 +1,7 @@
 package fr.fiesta.dmm.world.block;
 
 import fr.fiesta.dmm.DMM;
-import fr.fiesta.dmm.world.item.ModCreativeModeTabs;
+import fr.fiesta.dmm.utils.ModCreativeModeTabs;
 import fr.fiesta.dmm.world.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
