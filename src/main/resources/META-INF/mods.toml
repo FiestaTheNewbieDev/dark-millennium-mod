@@ -23,6 +23,7 @@ description="!!! Unoficial Warhammer 40,000 Content !!!"
     ordering="NONE"
     # Side this dependency is applied on - BOTH, CLIENT or SERVER
     side="BOTH"
+
 [[dependencies.dmm]]
     modId="minecraft"
     mandatory=true
