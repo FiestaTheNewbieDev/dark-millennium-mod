@@ -5,16 +5,11 @@ import fr.fiesta.dmm.client.ModKeyBinds;
 import fr.fiesta.dmm.client.model.entity.BoltModel;
 import fr.fiesta.dmm.client.model.entity.CultistModel;
 import fr.fiesta.dmm.client.model.entity.ImperialGuardModel;
-///import fr.fiesta.dmm.client.model.entity.LaserBeamModel;
 import fr.fiesta.dmm.client.model.entity.LaserBeamModel;
 import fr.fiesta.dmm.network.ModPackets;
 import fr.fiesta.dmm.network.packet.ReloadC2SPacket;
 import fr.fiesta.dmm.world.entity.chaos.CultistEntity;
 import fr.fiesta.dmm.world.entity.ModEntityTypes;
-import fr.fiesta.dmm.world.item.gun.GunItem;
-import net.minecraft.client.Minecraft;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.InputEvent;
@@ -27,7 +22,7 @@ public class ModClientEvents {
     public static class ClientForgeEvents {
         @SubscribeEvent
         public static void onKeyInput(InputEvent.KeyInputEvent event) {
-            if (ModKeyBinds.RELOADING_KEY.consumeClick()) ModPackets.sendToServer(new ReloadC2SPacket());
+            if (ModKeyBinds.RELOAD.consumeClick()) ModPackets.sendToServer(new ReloadC2SPacket());
         }
     }
 
