@@ -84,6 +84,7 @@ public abstract class CustomProjectileEntity extends Projectile {
                 target.hurt(DamageSource.GENERIC, this.attackDamage);
             }
         }
+        this.discard();
     }
 
     @Override
