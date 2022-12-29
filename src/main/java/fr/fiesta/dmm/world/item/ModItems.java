@@ -2,11 +2,14 @@ package fr.fiesta.dmm.world.item;
 
 import fr.fiesta.dmm.DMM;
 import fr.fiesta.dmm.utils.ModCreativeModeTabs;
+import fr.fiesta.dmm.world.entity.ModEntityTypes;
+import fr.fiesta.dmm.world.entity.chaos.CultistEntity;
 import fr.fiesta.dmm.world.item.gun.BoltPistol;
 import fr.fiesta.dmm.world.item.gun.Lasgun;
 import fr.fiesta.dmm.world.item.gun.Laspistol;
 import fr.fiesta.dmm.world.item.power_weapon.PowerWeapon;
 import net.minecraft.world.item.*;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -26,4 +29,9 @@ public class ModItems {
     public static final RegistryObject<Item> POWER_SWORD = ITEMS.register("power_sword", () -> new PowerWeapon(9, -2.4f, 1000, new Item.Properties().tab(ModCreativeModeTabs.DMM_ITEMS)));
 
     public static final RegistryObject<Item> AUSPEX = ITEMS.register("auspex", () -> new Auspex(50, 20, new Item.Properties().tab(ModCreativeModeTabs.DMM_ITEMS)));
+
+    public static final RegistryObject<Item> CULTIST_SPAWN_EGG = ITEMS.register("cultist_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.CULTIST, 582900, 606060, new Item.Properties().tab(ModCreativeModeTabs.DMM_ENTITIES)));
+    public static final RegistryObject<Item> IMPERIAL_GUARD_SPAWN_EGG = ITEMS.register("imperial_guard_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.IMPERIAL_GUARD, 606060, 568203, new Item.Properties().tab(ModCreativeModeTabs.DMM_ENTITIES)));
+    public static final RegistryObject<Item> OGRYN_SPAWN_EGG = ITEMS.register("ogryn_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.OGRYN, 0xc8ad7f, 5009705, new Item.Properties().tab(ModCreativeModeTabs.DMM_ENTITIES)));
+    public static final RegistryObject<Item> CIVILIAN_SPAWN_EGG = ITEMS.register("civilian_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.CIVILIAN, 0xa91101, 0x1e7fcb, new Item.Properties().tab(ModCreativeModeTabs.DMM_ENTITIES)));
 }
