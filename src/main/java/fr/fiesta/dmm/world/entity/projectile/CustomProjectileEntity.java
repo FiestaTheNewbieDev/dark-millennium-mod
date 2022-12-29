@@ -2,7 +2,6 @@ package fr.fiesta.dmm.world.entity.projectile;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
@@ -55,7 +54,7 @@ public abstract class CustomProjectileEntity extends Projectile {
         if (this.level.isClientSide || (entity == null || !entity.isRemoved()) && this.level.hasChunkAt(this.blockPosition())) {
             super.tick();
             if (this.touchingUnloadedChunk()) {
-                this.discard();
+                this.destroy();
             }
             HitResult hitresult = ProjectileUtil.getHitResult(this, this::canHitEntity);
             if (hitresult.getType() != HitResult.Type.MISS && !net.minecraftforge.event.ForgeEventFactory.onProjectileImpact(this, hitresult)) {
@@ -78,13 +77,16 @@ public abstract class CustomProjectileEntity extends Projectile {
     public void onHitEntity(EntityHitResult hitResult) {
         super.onHitEntity(hitResult);
         Entity target = hitResult.getEntity();
-        Entity attacker = this.getOwner();
         if (!(target instanceof CustomProjectileEntity)) {
             if(!this.level.isClientSide) {
                 target.hurt(DamageSource.GENERIC, this.attackDamage);
+                if (this.shooter instanceof Player) {
+                    ((LivingEntity)target).setLastHurtByPlayer((Player)this.shooter);
+                }
+                ((LivingEntity)target).setLastHurtByMob(this.shooter);
             }
         }
-        this.discard();
+        this.destroy();
     }
 
     @Override
@@ -96,11 +98,11 @@ public abstract class CustomProjectileEntity extends Projectile {
                 if (this.level.getBlockState(pos).getMaterial() == Material.GLASS) {
                     this.level.destroyBlock(pos, false);
                 } else {
-                    this.discard();
+                    this.destroy();
                 }
             }
             else {
-                this.discard();
+                this.destroy();
             }
         }
     }
@@ -131,11 +133,11 @@ public abstract class CustomProjectileEntity extends Projectile {
     }
 
     @Override
-    protected void readAdditionalSaveData(CompoundTag p_20052_) {
+    protected void readAdditionalSaveData(CompoundTag tag) {
     }
 
     @Override
-    protected void addAdditionalSaveData(CompoundTag p_20139_) {
+    protected void addAdditionalSaveData(CompoundTag tag) {
     }
 
     @Override
@@ -150,5 +152,9 @@ public abstract class CustomProjectileEntity extends Projectile {
 
     public boolean canBreakGlass() {
         return false;
+    }
+
+    public void destroy() {
+        this.discard();
     }
 }
