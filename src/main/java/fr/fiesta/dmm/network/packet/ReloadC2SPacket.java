@@ -31,9 +31,8 @@ public class ReloadC2SPacket {
         context.enqueueWork(() -> {
             ServerPlayer player = context.getSender();
             ServerLevel level = player.getLevel();
-            if (player.getMainHandItem().getItem() instanceof GunItem) {
-                GunItem gun = ((GunItem) player.getMainHandItem().getItem());
-                if (!player.getCooldowns().isOnCooldown(gun)) gun.reload(player.getMainHandItem(), player);
+            if (player.getMainHandItem().getItem() instanceof GunItem gun) {
+                if (!player.getCooldowns().isOnCooldown(gun)) gun.reload(player.getMainHandItem(), player, false);
             }
         });
         return true;
