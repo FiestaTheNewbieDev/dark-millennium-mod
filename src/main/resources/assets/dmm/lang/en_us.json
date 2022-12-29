@@ -1,6 +1,7 @@
 {
-  "itemGroup.dmm_items": "§6Dark Millennium Mod Items§r",
-  "itemGroup.dmm_blocks": "§6Dark Millennium Mod Blocks§r",
+  "itemGroup.dmm.items": "§6Dark Millennium Mod Items§r",
+  "itemGroup.dmm.blocks": "§6Dark Millennium Mod Blocks§r",
+  "itemGroup.dmm.entities": "§6Dark Millennium Mod Entities§r",
 
   "advancements.dmm.root.title": "Dark Millennium Mod",
   "advancements.dmm.root.desc": "Welcome to 41st Millennium",
@@ -22,6 +23,12 @@
   "tooltip.dmm.weapons.fire_rate": "Fire rate : %1$s rounds per minute",
   "tooltip.dmm.press_shift": "Press §4SHIFT§r for more Information",
 
+  "block.dmm.rockcrete": "Rockcrete",
+  "block.dmm.rockcrete_bricks": "Rockcrete Bricks",
+  "block.dmm.plascrete": "Plascrete",
+  "block.dmm.plascrete_bricks": "Plascrete Bricks",
+  "block.dmm.ferrocrete": "Ferrocrete",
+  "block.dmm.ferrocrete_bricks": "Ferrocrete Bricks",
   "block.dmm.emperor_idol": "Emperor Idol",
 
   "item.dmm.laspistol_power_pack": "Laspistol Power Pack",
@@ -34,8 +41,15 @@
   "item.dmm.power_sword": "Power Sword",
   "item.dmm.auspex": "Auspex",
 
+  "item.dmm.cultist_spawn_egg": "Cultist Spawn Egg",
+  "item.dmm.imperial_guard_spawn_egg": "Imperial Guard Spawn Egg",
+  "item.dmm.ogryn_spawn_egg": "Ogryn Spawn Egg",
+  "item.dmm.civilian_spawn_egg": "Civilian Spawn Egg",
+
   "entity.dmm.cultist": "Cultist",
   "entity.dmm.imperial_guard": "Imperial Guard",
+  "entity.dmm.ogryn": "Ogryn",
+  "entity.dmm.civilian": "Civilian",
 
   "tooltip.dmm:auspex.desc": "§4Also called Surveyor, Multi-scanner or Scanner, an Auspex is a short-ranged sensor used to analyse ambient energy emmissions accross a wide band of electromagnetic spectrum.§r",
   "tooltip.dmm:laspistol.desc": "§4Standard variant of the laspistol used by Cadian troops.§r",

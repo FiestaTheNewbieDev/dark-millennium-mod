@@ -1,6 +1,7 @@
 {
-  "itemGroup.dmm_items": "§6Dark Millennium Mod Items§r",
-  "itemGroup.dmm_blocks": "§6Dark Millennium Mod Blocks§r",
+  "itemGroup.dmm.items": "§6Dark Millennium Mod Items§r",
+  "itemGroup.dmm.blocks": "§6Dark Millennium Mod Blocks§r",
+  "itemGroup.dmm.entities": "§6Dark Millennium Mod Entities§r",
 
   "advancements.dmm.root.title": "Dark Millennium Mod",
   "advancements.dmm.root.desc": "Bienvenue au 41ème Millénaire",
@@ -22,6 +23,12 @@
   "tooltip.dmm.weapons.fire_rate": "Cadence de tir : %1$s coups par minute",
   "tooltip.dmm.press_shift": "Appuyez sur §4SHIFT§r pour plus d'informations",
 
+  "block.dmm.rockcrete": "Lithobéton",
+  "block.dmm.rockcrete_bricks": "Briques de lithobéton",
+  "block.dmm.plascrete": "Plastobéton",
+  "block.dmm.plascrete_bricks": "Briques de plastobéton",
+  "block.dmm.ferrocrete": "Ferrobéton",
+  "block.dmm.ferrocrete_bricks": "Briques de ferrobéton",
   "block.dmm.emperor_idol": "Idole de l'Empereur",
 
   "item.dmm.laspistol_power_pack": "Cellule énergétique de pistolet laser",
@@ -36,6 +43,8 @@
 
   "entity.dmm.cultist": "Cultiste",
   "entity.dmm.imperial_guard": "Garde impérial",
+  "entity.dmm.ogryn": "Ogryn",
+  "entity.dmm.civilian": "Civil",
 
   "tooltip.dmm:auspex.desc": "§4Capteur à courte portée utilisé pour analyser les émissions d'énergie ambiente via une large bande du spectre électromagnétique.§r",
   "tooltip.dmm:laspistol.desc": "§4Variante standard du pistolet laser utilisée par les troupes cadiennes.§r",
