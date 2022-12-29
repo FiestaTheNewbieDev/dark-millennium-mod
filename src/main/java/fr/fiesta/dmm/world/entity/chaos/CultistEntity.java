@@ -1,6 +1,9 @@
 package fr.fiesta.dmm.world.entity.chaos;
 
 import fr.fiesta.dmm.world.item.ModItems;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -21,7 +24,7 @@ public class CultistEntity extends Monster {
 
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1, true));
+        this.goalSelector.addGoal(0, new MeleeAttackGoal(this, 1, true));
         this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 0.5D));
         this.targetSelector.addGoal(0, new HurtByTargetGoal(this));
@@ -34,11 +37,23 @@ public class CultistEntity extends Monster {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 20.0f)
                 .add(Attributes.ATTACK_DAMAGE, 1.0f)
-                .add(Attributes.MOVEMENT_SPEED, (double) 0.3F);
+                .add(Attributes.MOVEMENT_SPEED, 0.3F);
     }
 
     @Override
     public boolean canHoldItem(ItemStack stack) {
         return true;
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        super.getDeathSound();
+        return SoundEvents.PILLAGER_DEATH;
+    }
+
+    @Override
+    protected SoundEvent getHurtSound(DamageSource damageSource) {
+        super.getHurtSound(damageSource);
+        return SoundEvents.PILLAGER_HURT;
     }
 }
