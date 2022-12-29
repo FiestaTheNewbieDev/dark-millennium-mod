@@ -2,14 +2,15 @@ package fr.fiesta.dmm.event;
 
 import fr.fiesta.dmm.DMM;
 import fr.fiesta.dmm.client.ModKeyBinds;
-import fr.fiesta.dmm.client.model.entity.BoltModel;
-import fr.fiesta.dmm.client.model.entity.CultistModel;
-import fr.fiesta.dmm.client.model.entity.ImperialGuardModel;
-import fr.fiesta.dmm.client.model.entity.LaserBeamModel;
+import fr.fiesta.dmm.client.model.entity.projectile.BoltModel;
+import fr.fiesta.dmm.client.model.entity.projectile.LaserBeamModel;
 import fr.fiesta.dmm.network.ModPackets;
 import fr.fiesta.dmm.network.packet.ReloadC2SPacket;
 import fr.fiesta.dmm.world.entity.chaos.CultistEntity;
 import fr.fiesta.dmm.world.entity.ModEntityTypes;
+import fr.fiesta.dmm.world.entity.imperium.ImperialGuardEntity;
+import fr.fiesta.dmm.world.entity.imperium.civilian.CivilianEntity;
+import fr.fiesta.dmm.world.entity.imperium.OgrynEntity;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.InputEvent;
@@ -31,15 +32,15 @@ public class ModClientEvents {
         @SubscribeEvent
         public static void onAttributeCreate(EntityAttributeCreationEvent event) {
             event.put(ModEntityTypes.CULTIST.get(), CultistEntity.createAttributes().build());
-            event.put(ModEntityTypes.IMPERIAL_GUARD.get(), CultistEntity.createAttributes().build());
+            event.put(ModEntityTypes.IMPERIAL_GUARD.get(), ImperialGuardEntity.createAttributes().build());
+            event.put(ModEntityTypes.OGRYN.get(), OgrynEntity.createAttributes().build());
+            event.put(ModEntityTypes.CIVILIAN.get(), CivilianEntity.createAttributes().build());
         }
 
         @SubscribeEvent
         public static void onRegisterLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
             event.registerLayerDefinition(BoltModel.BOLT_LAYER, BoltModel::createLayer);
             event.registerLayerDefinition(LaserBeamModel.LASER_BEAM_LAYER, LaserBeamModel::createLayer);
-            event.registerLayerDefinition(CultistModel.CULTIST_LAYER, CultistModel::createBodyLayer);
-            event.registerLayerDefinition(ImperialGuardModel.IMPERIAL_GUARD_LAYER, ImperialGuardModel::createBodyLayer);
         }
     }
 }
