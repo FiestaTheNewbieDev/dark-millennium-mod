@@ -2,6 +2,9 @@ package fr.fiesta.dmm.world.entity.imperium;
 
 import fr.fiesta.dmm.world.item.ModItems;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -36,7 +39,7 @@ public class ImperialGuardEntity extends Animal {
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 20.0f)
                 .add(Attributes.ATTACK_DAMAGE, 1.0f)
-                .add(Attributes.MOVEMENT_SPEED, (double) 0.3F);
+                .add(Attributes.MOVEMENT_SPEED, 0.3F);
     }
 
     @Override
@@ -46,7 +49,19 @@ public class ImperialGuardEntity extends Animal {
 
     @Nullable
     @Override
-    public AgeableMob getBreedOffspring(ServerLevel p_146743_, AgeableMob p_146744_) {
+    public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob p_146744_) {
         return null;
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        super.getDeathSound();
+        return SoundEvents.PLAYER_DEATH;
+    }
+
+    @Override
+    protected SoundEvent getHurtSound(DamageSource damageSource) {
+        super.getHurtSound(damageSource);
+        return SoundEvents.PLAYER_HURT;
     }
 }
