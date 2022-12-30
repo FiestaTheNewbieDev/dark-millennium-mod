@@ -1,7 +1,7 @@
 package fr.fiesta.dmm.client.renderer.entity;
 
 import fr.fiesta.dmm.client.renderer.entity.chaos.CultistRenderer;
-import fr.fiesta.dmm.client.renderer.entity.imperium.CivilianRenderer;
+import fr.fiesta.dmm.client.renderer.entity.imperium.HumanCivilianRenderer;
 import fr.fiesta.dmm.client.renderer.entity.imperium.ImperialGuardRenderer;
 import fr.fiesta.dmm.client.renderer.entity.imperium.OgrynRenderer;
 import fr.fiesta.dmm.client.renderer.entity.projectile.BoltRenderer;
@@ -16,6 +16,6 @@ public class ModEntityRenderers {
         EntityRenderers.register(ModEntityTypes.CULTIST.get(), CultistRenderer::new);
         EntityRenderers.register(ModEntityTypes.IMPERIAL_GUARD.get(), ImperialGuardRenderer::new);
         EntityRenderers.register(ModEntityTypes.OGRYN.get(), OgrynRenderer::new);
-        EntityRenderers.register(ModEntityTypes.CIVILIAN.get(), CivilianRenderer::new);
+        EntityRenderers.register(ModEntityTypes.HUMAN_CIVILIAN.get(), HumanCivilianRenderer::new);
     }
 }

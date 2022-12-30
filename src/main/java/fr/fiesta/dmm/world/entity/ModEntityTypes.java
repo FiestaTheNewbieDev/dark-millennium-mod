@@ -2,8 +2,8 @@ package fr.fiesta.dmm.world.entity;
 
 import fr.fiesta.dmm.DMM;
 import fr.fiesta.dmm.world.entity.chaos.CultistEntity;
-import fr.fiesta.dmm.world.entity.imperium.civilian.CivilianEntity;
-import fr.fiesta.dmm.world.entity.imperium.ImperialGuardEntity;
+import fr.fiesta.dmm.world.entity.imperium.human_civilian.HumanCivilianEntity;
+import fr.fiesta.dmm.world.entity.imperium.imperial_guard.ImperialGuardEntity;
 import fr.fiesta.dmm.world.entity.imperium.OgrynEntity;
 import fr.fiesta.dmm.world.entity.projectile.BoltEntity;
 import fr.fiesta.dmm.world.entity.projectile.LaserBeamEntity;
@@ -38,9 +38,9 @@ public class ModEntityTypes {
             .sized(0.65f, 1.90f)
             .build(new ResourceLocation(DMM.MOD_ID, "ogryn").toString()));
 
-    public static final RegistryObject<EntityType<CivilianEntity>> CIVILIAN = ENTITY_TYPES.register("civilian", () -> EntityType.Builder.of(CivilianEntity::new, MobCategory.CREATURE)
+    public static final RegistryObject<EntityType<HumanCivilianEntity>> HUMAN_CIVILIAN = ENTITY_TYPES.register("human_civilian", () -> EntityType.Builder.of(HumanCivilianEntity::new, MobCategory.CREATURE)
             .sized(0.65f, 1.90f)
-            .build(new ResourceLocation(DMM.MOD_ID, "civilian").toString()));
+            .build(new ResourceLocation(DMM.MOD_ID, "human_civilian").toString()));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

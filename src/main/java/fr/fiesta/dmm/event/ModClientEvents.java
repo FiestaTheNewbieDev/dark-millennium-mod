@@ -8,8 +8,8 @@ import fr.fiesta.dmm.network.ModPackets;
 import fr.fiesta.dmm.network.packet.ReloadC2SPacket;
 import fr.fiesta.dmm.world.entity.chaos.CultistEntity;
 import fr.fiesta.dmm.world.entity.ModEntityTypes;
-import fr.fiesta.dmm.world.entity.imperium.ImperialGuardEntity;
-import fr.fiesta.dmm.world.entity.imperium.civilian.CivilianEntity;
+import fr.fiesta.dmm.world.entity.imperium.imperial_guard.ImperialGuardEntity;
+import fr.fiesta.dmm.world.entity.imperium.human_civilian.HumanCivilianEntity;
 import fr.fiesta.dmm.world.entity.imperium.OgrynEntity;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -34,7 +34,7 @@ public class ModClientEvents {
             event.put(ModEntityTypes.CULTIST.get(), CultistEntity.createAttributes().build());
             event.put(ModEntityTypes.IMPERIAL_GUARD.get(), ImperialGuardEntity.createAttributes().build());
             event.put(ModEntityTypes.OGRYN.get(), OgrynEntity.createAttributes().build());
-            event.put(ModEntityTypes.CIVILIAN.get(), CivilianEntity.createAttributes().build());
+            event.put(ModEntityTypes.HUMAN_CIVILIAN.get(), HumanCivilianEntity.createAttributes().build());
         }
 
         @SubscribeEvent
