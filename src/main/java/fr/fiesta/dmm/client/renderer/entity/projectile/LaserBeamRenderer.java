@@ -22,7 +22,7 @@ public class LaserBeamRenderer extends EntityRenderer<LaserBeamEntity> {
 
     public LaserBeamRenderer(EntityRendererProvider.Context context) {
         super(context);
-        this.model = new LaserBeamModel(context.bakeLayer(LaserBeamModel.LASER_BEAM_LAYER));
+        this.model = new LaserBeamModel(context.bakeLayer(LaserBeamModel.LAYER));
     }
 
     @Override

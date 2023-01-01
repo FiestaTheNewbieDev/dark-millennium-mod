@@ -80,10 +80,8 @@ public abstract class CustomProjectileEntity extends Projectile {
         if (!(target instanceof CustomProjectileEntity)) {
             if(!this.level.isClientSide) {
                 target.hurt(DamageSource.GENERIC, this.attackDamage);
-                if (this.shooter instanceof Player) {
-                    ((LivingEntity)target).setLastHurtByPlayer((Player)this.shooter);
-                }
-                ((LivingEntity)target).setLastHurtByMob(this.shooter);
+                if (this.shooter instanceof Player) ((LivingEntity)target).setLastHurtByPlayer((Player)this.shooter);
+                 else ((LivingEntity)target).setLastHurtByMob(this.shooter);
             }
         }
         this.destroy();

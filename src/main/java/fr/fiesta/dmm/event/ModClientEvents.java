@@ -2,6 +2,7 @@ package fr.fiesta.dmm.event;
 
 import fr.fiesta.dmm.DMM;
 import fr.fiesta.dmm.client.ModKeyBinds;
+import fr.fiesta.dmm.client.model.entity.imperium.OgrynModel;
 import fr.fiesta.dmm.client.model.entity.projectile.BoltModel;
 import fr.fiesta.dmm.client.model.entity.projectile.LaserBeamModel;
 import fr.fiesta.dmm.network.ModPackets;
@@ -39,8 +40,9 @@ public class ModClientEvents {
 
         @SubscribeEvent
         public static void onRegisterLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
-            event.registerLayerDefinition(BoltModel.BOLT_LAYER, BoltModel::createLayer);
-            event.registerLayerDefinition(LaserBeamModel.LASER_BEAM_LAYER, LaserBeamModel::createLayer);
+            event.registerLayerDefinition(BoltModel.LAYER, BoltModel::createLayer);
+            event.registerLayerDefinition(LaserBeamModel.LAYER, LaserBeamModel::createLayer);
+            event.registerLayerDefinition(OgrynModel.LAYER, OgrynModel::createLayer);
         }
     }
 }

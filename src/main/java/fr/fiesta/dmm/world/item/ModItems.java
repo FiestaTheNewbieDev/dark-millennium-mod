@@ -33,5 +33,5 @@ public class ModItems {
     public static final RegistryObject<Item> CULTIST_SPAWN_EGG = ITEMS.register("cultist_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.CULTIST, 582900, 606060, new Item.Properties().tab(ModCreativeModeTabs.DMM_ENTITIES)));
     public static final RegistryObject<Item> IMPERIAL_GUARD_SPAWN_EGG = ITEMS.register("imperial_guard_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.IMPERIAL_GUARD, 606060, 568203, new Item.Properties().tab(ModCreativeModeTabs.DMM_ENTITIES)));
     public static final RegistryObject<Item> OGRYN_SPAWN_EGG = ITEMS.register("ogryn_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.OGRYN, 0xc8ad7f, 5009705, new Item.Properties().tab(ModCreativeModeTabs.DMM_ENTITIES)));
-    public static final RegistryObject<Item> CIVILIAN_SPAWN_EGG = ITEMS.register("civilian_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.CIVILIAN, 0xa91101, 0x1e7fcb, new Item.Properties().tab(ModCreativeModeTabs.DMM_ENTITIES)));
+    public static final RegistryObject<Item> HUMAN_CIVILIAN_SPAWN_EGG = ITEMS.register("human_civilian_spawn_egg", () -> new ForgeSpawnEggItem(ModEntityTypes.HUMAN_CIVILIAN, 0xa91101, 0x1e7fcb, new Item.Properties().tab(ModCreativeModeTabs.DMM_ENTITIES)));
 }
