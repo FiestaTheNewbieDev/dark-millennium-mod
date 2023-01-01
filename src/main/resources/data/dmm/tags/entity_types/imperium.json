@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "dmm:imperial_guard"
+    "dmm:imperial_guard",
+    "dmm:ogryn",
+    "dmm:human_civilian"
   ]
 }
