@@ -10,7 +10,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 
 public class BoltEntity extends CustomProjectileEntity {
-    private static final float SPEED = 3.5f;
+    private static final float SPEED = 3.5F;
 
     public BoltEntity(EntityType<? extends CustomProjectileEntity> type, Level level) {
         super(type, level);
