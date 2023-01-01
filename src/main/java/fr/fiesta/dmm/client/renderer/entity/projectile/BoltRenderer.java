@@ -22,7 +22,7 @@ public class BoltRenderer extends EntityRenderer<BoltEntity> {
 
     public BoltRenderer(EntityRendererProvider.Context context) {
         super(context);
-        this.model = new BoltModel(context.bakeLayer(BoltModel.BOLT_LAYER));
+        this.model = new BoltModel(context.bakeLayer(BoltModel.LAYER));
     }
 
     @Override
@@ -30,7 +30,7 @@ public class BoltRenderer extends EntityRenderer<BoltEntity> {
         poseStack.pushPose();
         poseStack.translate(0, -1.425f, 0);
         poseStack.mulPose(Vector3f.YP.rotationDegrees(entity.yRotO + 180));
-        ///poseStack.mulPose(Vector3f.XP.rotationDegrees(entity.xRotO));
+        poseStack.mulPose(Vector3f.XP.rotationDegrees(entity.xRotO));
         VertexConsumer vertexconsumer = bufferSource.getBuffer(this.model.renderType(this.getTextureLocation(entity)));
         this.model.renderToBuffer(poseStack, vertexconsumer, p_114490_, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
         poseStack.popPose();
