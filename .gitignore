@@ -1,2 +1,7 @@
-#everything
-/*
+/.gradle
+/.idea
+/build
+/gradle
+/run
+/src/generated
+/src/test
