@@ -14,7 +14,7 @@
   "key.dmm.reload": "Reload",
 
   "tooltip.dmm.auspex.no_detection": "§2+++ No information obtained +++§r",
-  "tooltip.dmm.auspex.detection": "§2+++ Energy detected at %1$s §2meters +++§r",
+  "tooltip.dmm.auspex.detection": "§2++ Energy detected at %1$s §2meters +++§r",
   "tooltip.dmm.auspex.reach": "Reach : %1$s meters",
   "tooltip.dmm.power_sword.energy": "Energy : %1$s/%2$s",
   "tooltip.dmm.weapons.no_ammo": "You are out of ammunition !",
@@ -44,14 +44,17 @@
   "item.dmm.cultist_spawn_egg": "Cultist Spawn Egg",
   "item.dmm.imperial_guard_spawn_egg": "Imperial Guard Spawn Egg",
   "item.dmm.ogryn_spawn_egg": "Ogryn Spawn Egg",
-  "item.dmm.civilian_spawn_egg": "Civilian Spawn Egg",
+  "item.dmm.human_civilian_spawn_egg": "Human Civilian Spawn Egg",
 
   "entity.dmm.cultist": "Cultist",
   "entity.dmm.imperial_guard": "Imperial Guard",
   "entity.dmm.ogryn": "Ogryn",
-  "entity.dmm.civilian": "Civilian",
+  "entity.dmm.human_civilian": "Human Civilian",
 
-  "tooltip.dmm:auspex.desc": "§4Also called Surveyor, Multi-scanner or Scanner, an Auspex is a short-ranged sensor used to analyse ambient energy emmissions accross a wide band of electromagnetic spectrum.§r",
-  "tooltip.dmm:laspistol.desc": "§4Standard variant of the laspistol used by Cadian troops.§r",
-  "tooltip.dmm:lasgun.desc": "§4Standard variant of the lasgun used by Cadian troops.§r"
+  "tooltip.dmm:laspistol.desc": "§4+++CENSORED+++§r",
+  "tooltip.dmm:lasgun.desc": "§4+++CENSORED+++§r",
+  "tooltip.dmm:bolt_pistol.desc": "§4+++CENSORED+++§r",
+  "tooltip.dmm:chainsword.desc": "§4+++CENSORED+++§r",
+  "tooltip.dmm:power_sword.desc": "§4+++CENSORED+++§r",
+  "tooltip.dmm:auspex.desc": "§4Also called Surveyor, Multi-scanner or Scanner, an Auspex is a short-ranged sensor used to analyse ambient energy emmissions accross a wide band of electromagnetic spectrum.§r"
 }

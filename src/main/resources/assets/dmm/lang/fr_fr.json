@@ -41,12 +41,20 @@
   "item.dmm.power_sword": "Épée énergétique",
   "item.dmm.auspex": "Auspex",
 
+  "item.dmm.cultist_spawn_egg": "Oeuf d'apparition de cultiste",
+  "item.dmm.imperial_guard_spawn_egg": "Oeuf d'apparition de garde impérial",
+  "item.dmm.ogryn_spawn_egg": "Oeuf d'apparition d'ogryn",
+  "item.dmm.human_civilian_spawn_egg": "Oeuf d'apparition de civil humain",
+
   "entity.dmm.cultist": "Cultiste",
   "entity.dmm.imperial_guard": "Garde impérial",
   "entity.dmm.ogryn": "Ogryn",
-  "entity.dmm.civilian": "Civil",
+  "entity.dmm.human_civilian": "Civil humain",
 
-  "tooltip.dmm:auspex.desc": "§4Capteur à courte portée utilisé pour analyser les émissions d'énergie ambiente via une large bande du spectre électromagnétique.§r",
-  "tooltip.dmm:laspistol.desc": "§4Variante standard du pistolet laser utilisée par les troupes cadiennes.§r",
-  "tooltip.dmm:lasgun.desc": "§4Variante standard du fusil laser utilisée par les troupes cadiennes.§r",,
+  "tooltip.dmm:laspistol.desc": "§4+++CENSURÉ§r",
+  "tooltip.dmm:lasgun.desc": "§4+++CENSURÉ+++§r",
+  "tooltip.dmm:bolt_pistol.desc": "§4+++CENSURÉ+++§r",
+  "tooltip.dmm:chainsword.desc": "§4+++CENSURÉ+++§r",
+  "tooltip.dmm:power_sword.desc": "§4+++CENSURÉ+++§r",
+  "tooltip.dmm:auspex.desc": "§4Capteur à courte portée utilisé pour analyser les émissions d'énergie ambiente via une large bande du spectre électromagnétique.§r"
 }
