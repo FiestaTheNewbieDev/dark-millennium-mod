@@ -6,13 +6,11 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -34,6 +32,7 @@ public class GunItem extends Item {
     public final int reloadTime;
     public final int fireCooldown;
     public final int fireRate;
+    public final boolean isTwoHanded = false;
 
     public GunItem(float attackDamage, MagazineItem magazine, int reloadTime, int fireCooldown, Properties properties) {
         super(properties.stacksTo(1));
@@ -77,11 +76,10 @@ public class GunItem extends Item {
         if (canFire(stack)) {
             this.fire(level, player, stack);
         } else {
-            if (player.isCreative()) this.reload(stack, player);
+            if (player.isCreative()) this.reload(stack, player, false);
             else {
                 if (level.isClientSide) player.sendMessage(new TranslatableComponent("tooltip.dmm.weapons.no_ammo"), player.getUUID());
                 player.getLevel().playSound(null, player.blockPosition(), ModSounds.LOCK.get(), SoundSource.PLAYERS, 1f, 1f);
-                this.reload(stack, player);
             }
         }
         return super.use(level, player, hand);
@@ -106,8 +104,8 @@ public class GunItem extends Item {
      * @param stack
      * @param player
      */
-    public void reload(ItemStack stack, Player player) {
-        if (player.isCreative()) {
+    public void reload(ItemStack stack, Player player, boolean forceReload) {
+        if (player.isCreative() || forceReload) {
             player.getCooldowns().addCooldown(this, this.reloadTime);
             stack.getTag().putInt("ammoCount", this.magSize);
             stack.getTag().putBoolean("hasMag", true);
