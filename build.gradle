@@ -106,7 +106,7 @@ jar {
         attributes([
                 "Specification-Title"     : "DMM",
                 "Specification-Vendor"    : "DMMsareus",
-                "Specification-Version"   : "1", // We are version 1 of ourselves
+                "Specification-Version"   : "1",
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Vendor"   : "DMMsareus",
