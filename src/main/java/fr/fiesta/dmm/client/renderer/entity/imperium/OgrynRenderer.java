@@ -1,31 +1,24 @@
 package fr.fiesta.dmm.client.renderer.entity.imperium;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-import fr.fiesta.dmm.world.entity.imperium.OgrynEntity;
-import net.minecraft.client.model.PlayerModel;
-import net.minecraft.client.model.geom.ModelLayers;
-import net.minecraft.client.renderer.MultiBufferSource;
+import fr.fiesta.dmm.DMM;
+import fr.fiesta.dmm.client.model.entity.imperium.OgrynModel;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.HumanoidMobRenderer;
+import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
-import org.checkerframework.checker.nullness.qual.NonNull;
+import net.minecraft.world.entity.Mob;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class OgrynRenderer extends HumanoidMobRenderer<OgrynEntity, PlayerModel<OgrynEntity>> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation("minecraft:textures/entity/steve.png");
+@OnlyIn(Dist.CLIENT)
+public class OgrynRenderer<T extends Mob, M extends OgrynModel<T>> extends MobRenderer<T, M> {
+    private static final ResourceLocation TEXTURE = new ResourceLocation(DMM.MOD_ID, "textures/entity/imperium/ogryn_0.png");
 
     public OgrynRenderer(EntityRendererProvider.Context context) {
-        super(context, new PlayerModel<>(context.bakeLayer(ModelLayers.PLAYER), true), 1);
+        super(context,(M)new OgrynModel<T>(context.bakeLayer(OgrynModel.LAYER)), 1);
     }
 
     @Override
-    public void render(OgrynEntity entity, float p_115456_, float p_115457_, PoseStack poseStack, MultiBufferSource bufferSource, int p_115460_) {
-        poseStack.scale(1.25F, 1.25F, 1.25F);
-        super.render(entity, p_115456_, p_115457_, poseStack, bufferSource, p_115460_);
-    }
-
-    @NonNull
-    @Override
-    public ResourceLocation getTextureLocation(OgrynEntity entity) {
+    public ResourceLocation getTextureLocation(T entity) {
         return TEXTURE;
     }
 }
