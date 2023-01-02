@@ -12,7 +12,7 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
 
 public class LaserBeamEntity extends CustomProjectileEntity {
-    private final static float SPEED = 3.5f;
+    private final static float SPEED = 3.5F;
     private BlockPos oldBlockPos;
 
     public LaserBeamEntity(EntityType<? extends LaserBeamEntity> type, Level level) {
@@ -21,9 +21,10 @@ public class LaserBeamEntity extends CustomProjectileEntity {
 
     public LaserBeamEntity(LivingEntity shooter, float attackDamage, Level level) {
         super(ModEntityTypes.LASER_BEAM.get(), shooter, attackDamage, SPEED, level);
-        this.oldBlockPos = new BlockPos(this.getOnPos().getX(), this.getOnPos().getY(), this.getOnPos().getZ());
+        ///this.oldBlockPos = new BlockPos(this.getOnPos().getX(), this.getOnPos().getY(), this.getOnPos().getZ());
     }
 
+    /*
     @Override
     public void onProjectileTick() {
         if (this.level.isClientSide) {
@@ -32,6 +33,7 @@ public class LaserBeamEntity extends CustomProjectileEntity {
         }
         this.oldBlockPos = new BlockPos(this.getOnPos().getX(), this.getOnPos().getY(), this.getOnPos().getZ());
     }
+     */
 
     @Override
     public void onHitBlock(BlockHitResult hitResult) {
@@ -39,9 +41,11 @@ public class LaserBeamEntity extends CustomProjectileEntity {
         this.level.playSound(null, this.blockPosition(), ModSounds.LASER_BEAM_IMPACT.get(), SoundSource.PLAYERS, 1f, 1f);
     }
 
+    /*
     @Override
     public void destroy() {
         if (this.level.isClientSide && this.oldBlockPos != null && this.level.getBlockState(this.oldBlockPos).getBlock() == Blocks.LIGHT) this.level.removeBlock(this.oldBlockPos, true);
         super.destroy();
     }
+     */
 }
