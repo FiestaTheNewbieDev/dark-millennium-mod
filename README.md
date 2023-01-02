@@ -4,7 +4,7 @@
 
 Dark Millennium Mod is a Minecraft Forge Mod based on Warhammer 40,000 universe.
 
-*Read this in other languages: [French](README.fr.md)*
+*Read this in other languages: [Français](README.fr.md)*
 
 ## Table of Contents
 * [Table of Contents](#table-of-contents)
