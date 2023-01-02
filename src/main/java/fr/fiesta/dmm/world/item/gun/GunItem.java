@@ -11,6 +11,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -80,6 +81,7 @@ public class GunItem extends Item {
             else {
                 if (level.isClientSide) player.sendMessage(new TranslatableComponent("tooltip.dmm.weapons.no_ammo"), player.getUUID());
                 player.getLevel().playSound(null, player.blockPosition(), ModSounds.LOCK.get(), SoundSource.PLAYERS, 1f, 1f);
+                this.reload(stack, player, false);
             }
         }
         return super.use(level, player, hand);
@@ -94,38 +96,44 @@ public class GunItem extends Item {
         return stack.getTag().getInt("ammoCount") > 0;
     }
 
-    public void fire(Level level, Player player, ItemStack stack) {
-        stack.getTag().putInt("ammoCount", stack.getTag().getInt("ammoCount") - 1);
-        player.getCooldowns().addCooldown(this, this.fireCooldown);
+    /**
+     * Fire method for players
+     * @param level
+     * @param shooter
+     * @param stack
+     */
+    public void fire(Level level, LivingEntity shooter,@Nullable ItemStack stack) {
+        if (stack != null) stack.getTag().putInt("ammoCount", stack.getTag().getInt("ammoCount") - 1);
+        if (shooter instanceof Player) ((Player)shooter).getCooldowns().addCooldown(this, this.fireCooldown);
     }
 
     /**
      * Gun ammunition reloading procedure
      * @param stack
-     * @param player
+     * @param shooter
      */
-    public void reload(ItemStack stack, Player player, boolean forceReload) {
-        if (player.isCreative() || forceReload) {
-            player.getCooldowns().addCooldown(this, this.reloadTime);
+    public void reload(ItemStack stack, LivingEntity shooter, boolean forceReload) {
+        if (((Player)shooter).isCreative() || forceReload) {
+            if (shooter instanceof Player) ((Player)shooter).getCooldowns().addCooldown(this, this.reloadTime);
             stack.getTag().putInt("ammoCount", this.magSize);
             stack.getTag().putBoolean("hasMag", true);
-            player.getLevel().playSound(null, player.blockPosition(), ModSounds.RELOAD.get(), SoundSource.PLAYERS, 1f, 1f);
+            shooter.getLevel().playSound(null, shooter.blockPosition(), ModSounds.RELOAD.get(), SoundSource.PLAYERS, 1f, 1f);
         } else {
-            if (!player.getInventory().isEmpty() && stack.getTag().getBoolean("hasMag")) {
+            if (!((Player)shooter).getInventory().isEmpty() && stack.getTag().getBoolean("hasMag")) {
                 ItemStack oldMag = new ItemStack(magazine.asItem());
                 CompoundTag tag = new CompoundTag();
                 tag.putInt("ammoCount", stack.getTag().getInt("ammoCount"));
                 oldMag.setTag(tag);
-                player.getInventory().add(oldMag);
+                ((Player)shooter).getInventory().add(oldMag);
                 stack.getTag().putInt("ammoCount", 0);
                 stack.getTag().putBoolean("hasMag", false);
-            } else if (!stack.getTag().getBoolean("hasMag") && containsMag(player.getInventory(), magazine.getDefaultInstance())) {
-                player.getCooldowns().addCooldown(this, this.reloadTime);
-                ItemStack newMag = player.getInventory().getItem(findSlotWithMag(player.getInventory(), magazine.getDefaultInstance()));
+            } else if (!stack.getTag().getBoolean("hasMag") && containsMag(((Player)shooter).getInventory(), magazine.getDefaultInstance())) {
+                ((Player)shooter).getCooldowns().addCooldown(this, this.reloadTime);
+                ItemStack newMag = ((Player)shooter).getInventory().getItem(findSlotWithMag(((Player)shooter).getInventory(), magazine.getDefaultInstance()));
                 stack.getTag().putInt("ammoCount", newMag.getTag().getInt("ammoCount"));
-                player.getInventory().removeItem(newMag);
+                ((Player)shooter).getInventory().removeItem(newMag);
                 stack.getTag().putBoolean("hasMag", true);
-                player.getLevel().playSound(null, player.blockPosition(), ModSounds.RELOAD.get(), SoundSource.PLAYERS, 1f, 1f);
+                shooter.getLevel().playSound(null, shooter.blockPosition(), ModSounds.RELOAD.get(), SoundSource.PLAYERS, 1f, 1f);
             }
         }
     }
