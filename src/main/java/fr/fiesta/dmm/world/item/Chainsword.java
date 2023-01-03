@@ -23,6 +23,9 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
+/**
+ * @author FiestaTheNewbieDev
+ */
 public class Chainsword extends Item {
     private final float attackDamage;
     private final Multimap<Attribute, AttributeModifier> defaultModifiers;

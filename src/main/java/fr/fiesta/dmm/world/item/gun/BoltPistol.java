@@ -8,6 +8,9 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
+/**
+ * @author FiestaTheNewbieDev
+ */
 public class BoltPistol extends GunItem {
     public BoltPistol(float attackDamage, int reloadTime, int fireCooldown, Properties properties) {
         super(attackDamage, ModItems.BOLT_PISTOL_MAGAZINE.get(), reloadTime, fireCooldown, properties);

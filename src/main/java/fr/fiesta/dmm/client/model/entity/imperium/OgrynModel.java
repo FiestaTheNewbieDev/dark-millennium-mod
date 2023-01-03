@@ -20,6 +20,9 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.function.Function;
 
+/**
+ * @author FiestaTheNewbieDev
+ */
 @OnlyIn(Dist.CLIENT)
 public class OgrynModel<T extends LivingEntity> extends AgeableListModel<T> implements ArmedModel, HeadedModel {
     public static final ModelLayerLocation LAYER = new ModelLayerLocation(new ResourceLocation(DMM.MOD_ID, "ogryn"), "main");
@@ -427,7 +430,7 @@ public class OgrynModel<T extends LivingEntity> extends AgeableListModel<T> impl
     }
 
     @OnlyIn(Dist.CLIENT)
-    public static enum ArmPose {
+    public enum ArmPose {
         EMPTY(false),
         ITEM(false),
         BLOCK(false),
@@ -439,7 +442,7 @@ public class OgrynModel<T extends LivingEntity> extends AgeableListModel<T> impl
 
         private final boolean twoHanded;
 
-        private ArmPose(boolean p_102896_) {
+        ArmPose(boolean p_102896_) {
             this.twoHanded = p_102896_;
         }
 

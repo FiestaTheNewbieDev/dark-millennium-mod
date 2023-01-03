@@ -10,6 +10,9 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
+/**
+ * @author FiestaTheNewbieDev
+ */
 public class ModTags {
     public static class Blocks {
         private static TagKey<Block> tag(String name) {

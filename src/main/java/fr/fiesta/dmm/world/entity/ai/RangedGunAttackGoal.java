@@ -9,6 +9,9 @@ import net.minecraft.world.entity.monster.RangedAttackMob;
 
 import java.util.EnumSet;
 
+/**
+ * @author FiestaTheNewbieDev
+ */
 public class RangedGunAttackGoal<T extends Mob & RangedGunAttackMob> extends Goal {
     private final T mob;
     private final double speedModifier;
@@ -53,7 +56,7 @@ public class RangedGunAttackGoal<T extends Mob & RangedGunAttackMob> extends Goa
 
     @Override
     public boolean canUse() {
-        return this.mob.getTarget() == null ? false : this.isHoldingGun();
+        return this.mob.getTarget() != null && this.isHoldingGun();
     }
 
     protected boolean isHoldingGun() {

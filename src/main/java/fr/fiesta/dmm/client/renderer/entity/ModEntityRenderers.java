@@ -3,12 +3,15 @@ package fr.fiesta.dmm.client.renderer.entity;
 import fr.fiesta.dmm.client.renderer.entity.chaos.CultistRenderer;
 import fr.fiesta.dmm.client.renderer.entity.imperium.HumanCivilianRenderer;
 import fr.fiesta.dmm.client.renderer.entity.imperium.ImperialGuardRenderer;
-import fr.fiesta.dmm.client.renderer.entity.imperium.OgrynRenderer;
+import fr.fiesta.dmm.client.renderer.entity.imperium.ogryn.OgrynRenderer;
 import fr.fiesta.dmm.client.renderer.entity.projectile.BoltRenderer;
 import fr.fiesta.dmm.client.renderer.entity.projectile.LaserBeamRenderer;
 import fr.fiesta.dmm.world.entity.ModEntityTypes;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 
+/**
+ * @author FiestaTheNewbieDev
+ */
 public class ModEntityRenderers {
     public static void init() {
         EntityRenderers.register(ModEntityTypes.LASER_BEAM.get(), LaserBeamRenderer::new);

@@ -3,7 +3,6 @@ package fr.fiesta.dmm.world.item;
 import fr.fiesta.dmm.DMM;
 import fr.fiesta.dmm.utils.ModCreativeModeTabs;
 import fr.fiesta.dmm.world.entity.ModEntityTypes;
-import fr.fiesta.dmm.world.entity.chaos.CultistEntity;
 import fr.fiesta.dmm.world.item.gun.BoltPistol;
 import fr.fiesta.dmm.world.item.gun.Lasgun;
 import fr.fiesta.dmm.world.item.gun.Laspistol;
@@ -14,6 +13,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+/**
+ * @author FiestaTheNewbieDev
+ */
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, DMM.MOD_ID);
     public static final RegistryObject<MagazineItem> LASPISTOL_POWER_PACK = ITEMS.register("laspistol_power_pack", () -> new MagazineItem(10, new Item.Properties().tab(ModCreativeModeTabs.DMM_ITEMS)));

@@ -14,6 +14,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
+/**
+ * @author FiestaTheNewbieDev
+ */
 @Mod(DMM.MOD_ID)
 public class DMM {
     public static final String MOD_ID = "dmm";

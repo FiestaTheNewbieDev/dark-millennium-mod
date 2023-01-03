@@ -3,6 +3,9 @@ package fr.fiesta.dmm.world.entity.imperium.human_civilian;
 import java.util.Arrays;
 import java.util.Comparator;
 
+/**
+ * @author FiestaTheNewbieDev
+ */
 public enum Variant {
     HUMAN_CIVILIAN_0(0),
     HUMAN_CIVILIAN_1(1),

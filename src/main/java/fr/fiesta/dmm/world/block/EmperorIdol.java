@@ -24,7 +24,9 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-
+/**
+ * @author FiestaTheNewbieDev
+ */
 public class EmperorIdol extends Block {
     private final int effectReach;
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;

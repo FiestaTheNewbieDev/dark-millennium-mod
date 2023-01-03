@@ -21,6 +21,9 @@ import net.minecraftforge.network.NetworkHooks;
 
 import java.util.UUID;
 
+/**
+ * @author FiestaTheNewbieDev
+ */
 public abstract class CustomProjectileEntity extends Projectile {
     private UUID shooterId;
     private LivingEntity shooter;

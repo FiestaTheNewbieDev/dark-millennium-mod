@@ -19,6 +19,9 @@ import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
+/**
+ * @author FiestaTheNewbieDev
+ */
 public class ModClientEvents {
     @Mod.EventBusSubscriber(modid = DMM.MOD_ID, value = Dist.CLIENT)
     public static class ClientForgeEvents {

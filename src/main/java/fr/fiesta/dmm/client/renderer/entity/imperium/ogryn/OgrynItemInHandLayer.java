@@ -15,6 +15,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
+/**
+ * @author FiestaTheNewbieDev
+ */
 @OnlyIn(Dist.CLIENT)
 public class OgrynItemInHandLayer<T extends LivingEntity, M extends EntityModel<T> & ArmedModel> extends RenderLayer<T, M> {
     public OgrynItemInHandLayer(RenderLayerParent<T, M> p_117183_) {

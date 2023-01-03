@@ -9,6 +9,9 @@ import net.minecraft.world.entity.Mob;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
+/**
+ * @author FiestaTheNewbieDev
+ */
 @OnlyIn(Dist.CLIENT)
 public class OgrynRenderer<T extends Mob, M extends OgrynModel<T>> extends MobRenderer<T, M> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(DMM.MOD_ID, "textures/entity/imperium/ogryn/ogryn_0.png");

@@ -13,6 +13,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
+/**
+ * @author FiestaTheNewbieDev
+ */
 @OnlyIn(Dist.CLIENT)
 public class LaserBeamModel extends Model {
     public static final ModelLayerLocation LAYER = new ModelLayerLocation(new ResourceLocation(DMM.MOD_ID, "laser_beam"), "main");

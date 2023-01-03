@@ -19,6 +19,9 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
+/**
+ * @author FiestaTheNewbieDev
+ */
 public class Auspex extends Item {
     private final int MAX_REACH = 100;
     private final int detectionReach;

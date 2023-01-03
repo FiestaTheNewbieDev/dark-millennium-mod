@@ -3,6 +3,9 @@ package fr.fiesta.dmm.world.entity.imperium.imperial_guard;
 import java.util.Arrays;
 import java.util.Comparator;
 
+/**
+ * @author FiestaTheNewbieDev
+ */
 public enum Variant {
     IMPERIAL_GUARD_0(0),
     IMPERIAL_GUARD_1(1),

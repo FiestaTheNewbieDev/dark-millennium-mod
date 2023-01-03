@@ -16,7 +16,9 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.util.Map;
 
-
+/**
+ * @author FiestaTheNewbieDev
+ */
 public class HumanCivilianRenderer extends HumanoidMobRenderer<HumanCivilianEntity, PlayerModel<HumanCivilianEntity>> {
     private static final Map<Variant, ResourceLocation> LOCATION_BY_VARIANT = Util.make(Maps.newEnumMap(Variant.class), (p_114874_) -> {
         for (int i = 0; i <= 8; i = i + 1) {

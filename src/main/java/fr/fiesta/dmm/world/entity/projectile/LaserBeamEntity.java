@@ -11,6 +11,9 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
 
+/**
+ * @author FiestaTheNewbieDev
+ */
 public class LaserBeamEntity extends CustomProjectileEntity {
     private final static float SPEED = 3.5F;
     private BlockPos oldBlockPos;

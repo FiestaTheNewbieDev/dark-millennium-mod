@@ -9,6 +9,9 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 
+/**
+ * @author FiestaTheNewbieDev
+ */
 public class BoltEntity extends CustomProjectileEntity {
     private static final float SPEED = 3.5F;
 

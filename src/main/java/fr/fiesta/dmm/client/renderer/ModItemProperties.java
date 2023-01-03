@@ -5,6 +5,9 @@ import fr.fiesta.dmm.world.item.ModItems;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 
+/**
+ * @author FiestaTheNewbieDev
+ */
 public class ModItemProperties {
     public static void init() {
         ItemProperties.register(ModItems.POWER_SWORD.get(), new ResourceLocation(DMM.MOD_ID, "enable"), (stack, level, player, id) -> {

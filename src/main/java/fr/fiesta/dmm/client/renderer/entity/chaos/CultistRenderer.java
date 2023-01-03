@@ -1,7 +1,6 @@
 package fr.fiesta.dmm.client.renderer.entity.chaos;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import fr.fiesta.dmm.DMM;
 import fr.fiesta.dmm.world.entity.chaos.CultistEntity;
 import net.minecraft.client.model.PlayerModel;
 import net.minecraft.client.model.geom.ModelLayers;
@@ -11,7 +10,9 @@ import net.minecraft.client.renderer.entity.HumanoidMobRenderer;
 import net.minecraft.resources.ResourceLocation;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
-
+/**
+ * @author FiestaTheNewbieDev
+ */
 public class CultistRenderer extends HumanoidMobRenderer<CultistEntity, PlayerModel<CultistEntity>> {
     private static final ResourceLocation TEXTURE = new ResourceLocation("minecraft:textures/entity/steve.png");
 

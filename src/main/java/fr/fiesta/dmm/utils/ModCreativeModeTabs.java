@@ -6,6 +6,9 @@ import fr.fiesta.dmm.world.item.ModItems;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
+/**
+ * @author FiestaTheNewbieDev
+ */
 public class ModCreativeModeTabs {
 
     public static final CreativeModeTab DMM_ITEMS = new CreativeModeTab(DMM.MOD_ID + ".items") {

@@ -1,5 +1,8 @@
 package fr.fiesta.dmm.world.entity.ai;
 
+/**
+ * @author FiestaTheNewbieDev
+ */
 public interface RangedGunAttackMob {
-    public void fire();
+    void fire();
 }

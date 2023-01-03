@@ -14,6 +14,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
+/**
+ * @author FiestaTheNewbieDev
+ */
 @OnlyIn(Dist.CLIENT)
 public class BoltRenderer extends EntityRenderer<BoltEntity> {
     private static final ResourceLocation TEXTURE_LOCATION = new ResourceLocation(DMM.MOD_ID, "textures/entity/projectile/bolt.png");
