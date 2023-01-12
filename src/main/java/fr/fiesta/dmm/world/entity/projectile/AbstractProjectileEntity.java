@@ -5,12 +5,16 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.util.Mth;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.AreaEffectCloud;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
+import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
@@ -19,6 +23,7 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.network.NetworkHooks;
 
+import java.util.Collection;
 import java.util.UUID;
 
 /**
@@ -84,7 +89,11 @@ public abstract class AbstractProjectileEntity extends Projectile {
             if(!this.level.isClientSide) {
                 if (this.shooter instanceof Player) ((LivingEntity)target).setLastHurtByPlayer((Player)this.shooter);
                 ((LivingEntity)target).setLastHurtByMob(this.shooter);
-                target.hurt(ModDamageSource.GUN, this.baseDamage);
+                if (target instanceof Creeper) {
+                    explodeCreeper((Creeper)target);
+                } else {
+                    target.hurt(ModDamageSource.GUN, this.baseDamage);
+                }
             }
         }
         this.destroy();
@@ -160,10 +169,49 @@ public abstract class AbstractProjectileEntity extends Projectile {
     }
 
     /**
+     * If true, the projectile will explode explosive entities like creeper on impact, else it will not
+     * @return
+     */
+    public boolean canExplodeExplosiveEntities() {
+        return true;
+    }
+
+    /**
      * Sub-method to discard entity
      * Allows to add effects at the destruction of the entity when overridden
      */
     public void destroy() {
         this.discard();
+    }
+
+    /**
+     * Simulates a creeper explosion
+     * @param creeper
+     */
+    private static void explodeCreeper(Creeper creeper) {
+        int explosionRadius = 3;
+        if (!creeper.level.isClientSide) {
+            Explosion.BlockInteraction explosion$blockinteraction = net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(creeper.level, creeper) ? Explosion.BlockInteraction.DESTROY : Explosion.BlockInteraction.NONE;
+            float f = creeper.isPowered() ? 2.0F : 1.0F;
+            creeper.level.explode(creeper, creeper.getX(), creeper.getY(), creeper.getZ(), (float)explosionRadius * f, explosion$blockinteraction);
+            creeper.discard();
+            spawnLingeringCloud(creeper);
+        }
+    }
+
+    private static void spawnLingeringCloud(Creeper creeper) {
+        Collection<MobEffectInstance> collection = creeper.getActiveEffects();
+        if (!collection.isEmpty()) {
+            AreaEffectCloud areaeffectcloud = new AreaEffectCloud(creeper.level, creeper.getX(), creeper.getY(), creeper.getZ());
+            areaeffectcloud.setRadius(2.5F);
+            areaeffectcloud.setRadiusOnUse(-0.5F);
+            areaeffectcloud.setWaitTime(10);
+            areaeffectcloud.setDuration(areaeffectcloud.getDuration() / 2);
+            areaeffectcloud.setRadiusPerTick(-areaeffectcloud.getRadius() / (float)areaeffectcloud.getDuration());
+            for(MobEffectInstance mobeffectinstance : collection) {
+                areaeffectcloud.addEffect(new MobEffectInstance(mobeffectinstance));
+            }
+            creeper.level.addFreshEntity(areaeffectcloud);
+        }
     }
 }
