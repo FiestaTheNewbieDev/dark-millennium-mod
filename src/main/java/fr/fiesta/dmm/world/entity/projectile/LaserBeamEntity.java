@@ -7,14 +7,12 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
 
 /**
  * @author FiestaTheNewbieDev
  */
-public class LaserBeamEntity extends CustomProjectileEntity {
+public class LaserBeamEntity extends AbstractProjectileEntity {
     private final static float SPEED = 3.5F;
     private BlockPos oldBlockPos;
 

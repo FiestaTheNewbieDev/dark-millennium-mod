@@ -51,6 +51,9 @@
   "entity.dmm.ogryn": "Ogryn",
   "entity.dmm.human_civilian": "Human Civilian",
 
+  "death.attack.gun": "%1$s took a stray bullet",
+  "death.attack.gun.player": "%1$s was shot by %2$s",
+
   "tooltip.dmm:laspistol.desc": "§4+++CENSORED+++§r",
   "tooltip.dmm:lasgun.desc": "§4+++CENSORED+++§r",
   "tooltip.dmm:bolt_pistol.desc": "§4+++CENSORED+++§r",

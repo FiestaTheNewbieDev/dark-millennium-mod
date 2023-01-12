@@ -1,10 +1,10 @@
 package fr.fiesta.dmm.world.entity.projectile;
 
+import fr.fiesta.dmm.utils.ModDamageSource;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.util.Mth;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -24,21 +24,21 @@ import java.util.UUID;
 /**
  * @author FiestaTheNewbieDev
  */
-public abstract class CustomProjectileEntity extends Projectile {
+public abstract class AbstractProjectileEntity extends Projectile {
     private UUID shooterId;
     private LivingEntity shooter;
-    private float attackDamage;
+    private float baseDamage;
     private float speed;
 
-    public CustomProjectileEntity(EntityType<? extends  Projectile> entityType, Level level) {
+    public AbstractProjectileEntity(EntityType<? extends  Projectile> entityType, Level level) {
         super(entityType, level);
     }
 
-    public CustomProjectileEntity(EntityType<? extends Projectile> entityType, LivingEntity shooter, float attackDamage, float speed, Level level) {
+    public AbstractProjectileEntity(EntityType<? extends Projectile> entityType, LivingEntity shooter, float attackDamage, float speed, Level level) {
         this(entityType, level);
         this.shooterId = shooter.getUUID();
         this.shooter = shooter;
-        this.attackDamage = attackDamage;
+        this.baseDamage = attackDamage;
         this.speed = speed;
 
         Vec3 direction = this.getDirection(shooter);
@@ -80,11 +80,11 @@ public abstract class CustomProjectileEntity extends Projectile {
     public void onHitEntity(EntityHitResult hitResult) {
         super.onHitEntity(hitResult);
         Entity target = hitResult.getEntity();
-        if (!(target instanceof CustomProjectileEntity)) {
+        if (!(target instanceof AbstractProjectileEntity)) {
             if(!this.level.isClientSide) {
-                target.hurt(DamageSource.GENERIC, this.attackDamage);
                 if (this.shooter instanceof Player) ((LivingEntity)target).setLastHurtByPlayer((Player)this.shooter);
                 ((LivingEntity)target).setLastHurtByMob(this.shooter);
+                target.hurt(ModDamageSource.GUN, this.baseDamage);
             }
         }
         this.destroy();
@@ -120,8 +120,7 @@ public abstract class CustomProjectileEntity extends Projectile {
         this.xRotO = this.getXRot();
     }
 
-    private Vec3 getVectorFromRotation(float pitch, float yaw)
-    {
+    private Vec3 getVectorFromRotation(float pitch, float yaw) {
         float f = Mth.cos(-yaw * 0.017453292F - (float) Math.PI);
         float f1 = Mth.sin(-yaw * 0.017453292F - (float) Math.PI);
         float f2 = -Mth.cos(-pitch * 0.017453292F);
@@ -151,10 +150,19 @@ public abstract class CustomProjectileEntity extends Projectile {
         return true;
     }
 
+    /**
+     * If true, the projectile will be able to break glass blocks, else it will not
+     * Need to be overridden to change the return statement
+     * @return
+     */
     public boolean canBreakGlass() {
         return false;
     }
 
+    /**
+     * Sub-method to discard entity
+     * Allows to add effects at the destruction of the entity when overridden
+     */
     public void destroy() {
         this.discard();
     }

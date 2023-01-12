@@ -1,6 +1,7 @@
 package fr.fiesta.dmm;
 
 import fr.fiesta.dmm.client.ModKeyBinds;
+import fr.fiesta.dmm.client.gui.ModGui;
 import fr.fiesta.dmm.client.renderer.ModItemProperties;
 import fr.fiesta.dmm.client.renderer.entity.*;
 import fr.fiesta.dmm.network.ModPackets;
@@ -40,5 +41,6 @@ public class DMM {
         ModKeyBinds.init();
         ModItemProperties.init();
         ModEntityRenderers.init();
+        ModGui.init();
     }
 }

@@ -16,6 +16,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -33,9 +34,9 @@ public class GunItem extends Item {
     public final int reloadTime;
     public final int fireCooldown;
     public final int fireRate;
-    public final boolean isTwoHanded = false;
+    public final boolean isTwoHanded;
 
-    public GunItem(float attackDamage, MagazineItem magazine, int reloadTime, int fireCooldown, Properties properties) {
+    public GunItem(float attackDamage, MagazineItem magazine, int reloadTime, int fireCooldown, boolean isTwoHanded, Properties properties) {
         super(properties.stacksTo(1));
         this.attackDamage = attackDamage;
         this.magSize = magazine.capacity;
@@ -43,6 +44,7 @@ public class GunItem extends Item {
         this.reloadTime = reloadTime;
         this.fireCooldown = fireCooldown;
         this.fireRate = (int) (60 / (0.05 * fireCooldown));
+        this.isTwoHanded = isTwoHanded;
     }
 
     @Override
@@ -70,18 +72,19 @@ public class GunItem extends Item {
             stack.setTag(tag);
         }
     }
-
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
-        if (canFire(stack)) {
-            this.fire(level, player, stack);
-        } else {
-            if (player.isCreative()) this.reload(stack, player, false);
-            else {
-                if (level.isClientSide) player.sendMessage(new TranslatableComponent("tooltip.dmm.weapons.no_ammo"), player.getUUID());
-                player.getLevel().playSound(null, player.blockPosition(), ModSounds.LOCK.get(), SoundSource.PLAYERS, 1f, 1f);
-                this.reload(stack, player, false);
+        if (checkTwoHanded(player, stack)) {
+            if (canFire(stack)) {
+                this.fire(level, player, stack);
+            } else {
+                if (player.isCreative()) this.reload(stack, player, false);
+                else {
+                    //if (level.isClientSide) player.sendMessage(new TranslatableComponent("tooltip.dmm.weapons.no_ammo"), player.getUUID());
+                    player.getLevel().playSound(null, player.blockPosition(), ModSounds.LOCK.get(), SoundSource.PLAYERS, 1f, 1f);
+                    this.reload(stack, player, false);
+                }
             }
         }
         return super.use(level, player, hand);
@@ -168,8 +171,45 @@ public class GunItem extends Item {
         return -1;
     }
 
+    /**
+     * Check if the gun can be used based on whether it is two-handed or not
+     * @param player
+     * @param stack
+     * @return
+     */
+    private boolean checkTwoHanded(Player player, ItemStack stack) {
+        if (this.isTwoHanded) {
+            if (player.getMainHandItem().equals(stack)) {
+                if (player.getOffhandItem().is(Items.AIR)) {
+                    return true;
+                }
+            } else if (player.getOffhandItem().equals(stack)) {
+                if (player.getMainHandItem().is(Items.AIR)) {
+                    return true;
+                }
+            }
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     @Override
     public boolean canAttackBlock(BlockState blockState, Level level, BlockPos pos, Player  player) {
         return false;
+    }
+
+    /**
+     * Return the ammoCount tag integer of a gun
+     * @param stack
+     * @return
+     * @throws IllegalArgumentException
+     */
+    public static int getAmmoCount(ItemStack stack) throws IllegalArgumentException{
+        if (stack.getItem() instanceof GunItem && stack.hasTag()) {
+            return stack.getTag().getInt("ammoCount");
+        } else {
+            throw (new IllegalArgumentException("The stack must be a gunItem"));
+        }
     }
 }

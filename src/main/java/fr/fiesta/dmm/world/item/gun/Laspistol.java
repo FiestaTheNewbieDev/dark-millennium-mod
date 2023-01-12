@@ -13,7 +13,7 @@ import net.minecraft.world.level.Level;
  */
 public class Laspistol extends GunItem {
     public Laspistol(float attackDamage, int reloadTime, int fireCooldown, Properties properties) {
-        super(attackDamage, ModItems.LASPISTOL_POWER_PACK.get(), reloadTime, fireCooldown, properties);
+        super(attackDamage, ModItems.LASPISTOL_POWER_PACK.get(), reloadTime, fireCooldown, false, properties);
     }
 
     @Override

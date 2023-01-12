@@ -12,10 +12,10 @@ import net.minecraft.world.phys.BlockHitResult;
 /**
  * @author FiestaTheNewbieDev
  */
-public class BoltEntity extends CustomProjectileEntity {
+public class BoltEntity extends AbstractProjectileEntity {
     private static final float SPEED = 3.5F;
 
-    public BoltEntity(EntityType<? extends CustomProjectileEntity> type, Level level) {
+    public BoltEntity(EntityType<? extends AbstractProjectileEntity> type, Level level) {
         super(type, level);
     }
 

@@ -13,7 +13,7 @@ import net.minecraft.world.level.Level;
  */
 public class BoltPistol extends GunItem {
     public BoltPistol(float attackDamage, int reloadTime, int fireCooldown, Properties properties) {
-        super(attackDamage, ModItems.BOLT_PISTOL_MAGAZINE.get(), reloadTime, fireCooldown, properties);
+        super(attackDamage, ModItems.BOLT_PISTOL_MAGAZINE.get(), reloadTime, fireCooldown, false, properties);
     }
 
     @Override
