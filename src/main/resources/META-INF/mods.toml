@@ -30,3 +30,10 @@ description="!!! Unoficial Warhammer 40,000 Content !!!"
     versionRange="[1.18.2,)"
     ordering="NONE"
     side="BOTH"
+
+[[dependencies.dmm]]
+    modId="fiestablocks"
+    mandatory=true
+    ordering="NONE"
+    versionRange="[1.0,)"
+    side="BOTH"
