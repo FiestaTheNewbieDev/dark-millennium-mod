@@ -95,21 +95,25 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
+    flatDir {
+        dirs '/libs'
+    }
 }
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.18.2-40.1.0'
+    implementation fg.deobf('fr.fiesta.fiestablocks:FiestaBlocks:1.0')
 }
 
 jar {
     manifest {
         attributes([
                 "Specification-Title"     : "DMM",
-                "Specification-Vendor"    : "DMMsareus",
+                "Specification-Vendor"    : "FiestaTheNewbieDev",
                 "Specification-Version"   : "1",
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
-                "Implementation-Vendor"   : "DMMsareus",
+                "Implementation-Vendor"   : "FiestaTheNewbieDev",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
